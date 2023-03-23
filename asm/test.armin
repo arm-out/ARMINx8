@@ -1,0 +1,51 @@
+set     0           // i = 0
+lwr     r2          // r2 = MEM[i]
+set     1           // i = 1
+lwr     r1          // r1 = MEM[i]
+movi    r2  r0      // r0 = r2
+
+add     r2
+sub     r3
+and     r4
+xor     r5
+or      r6
+not     r7
+rxor    r8
+lsl     r9
+lsr     r10
+inc     r0
+movo    r0  r11
+
+set     2           // i = 2
+swr     r2          // MEM[i] = r2
+set     3
+swr     r3
+set     4
+swr     r4
+set     5
+swr     r5
+set     6
+swr     r6
+set     7
+swr     r7
+set     8
+swr     r8
+set     9
+swr     r9
+set     10
+swr     r10
+set     11
+swr     r11
+
+set     12          // r0 = 12
+movo    r0  r1      // r1 = 12
+set     0           // r0 = 0
+LOOP_BEGIN          // (r0 = 0, r != 12, r += 4)
+inc     r0
+inc     r0
+inc     r0
+inc     r0
+bneq                // BACK TO START
+
+set     0           // r0 = 0
+halt                // done
