@@ -1,0 +1,145 @@
+set     0           // i = 0
+movo    r0  r15     // r15 = i
+set     1           // j = 1
+movo    r0  r14     // r14 = j
+
+LOOP_BEGIN
+movi    r15 r0
+lwr     r2          // r2 = LSW
+movi    r14 r0
+lwr     r3          // r3 = MSW
+
+movi    r2  r0
+lsr     r0
+lsr     r0
+lsr     r0
+lsr     r0
+rxor    r1          // r1 = ^(b8:b5)
+
+movi    r3  r0
+rxor    r0          // r0 = ^(b11:b9)
+xor     r4          // r4 = p8
+
+set     35
+lsl     r0
+lsl     r1
+set     2 
+or      r1          // p4 LSW bitmask
+movi    r2  r0
+and     r0
+rxor    r1          // r1 = ^(b8,b4,b3,b2,b1)
+movi    r3  r0
+rxor    r0          // r0 = ^(b11:b9)
+xor     r5          // r5 = p4
+
+set     54
+lsl     r1
+set     1
+or      r1          // p2 LSW bitmask
+movi    r2  r0
+and     r0
+rxor    r9          // r9 = ^(b7,b6,b4,b3,b1)
+set     6           // p2 MSW bitmask
+movi    r3  r1
+and     r0
+rxor    r0          // r0 = ^(b11,b10)
+movi    r9  r1
+xor     r6
+
+set     45
+lsl     r1
+set     1
+or      r1          // p1 LSW bitmask
+movi    r2  r0
+and     r0
+rxor    r9          // r9 = ^(b7,b5,b4,b2,b1)
+set     5           // p1 MSW bitmask
+movi    r3  r1
+and     r0
+rxor    r0          // r0 = ^(b11,b9)
+movi    r9  r1
+xor     r7          // r7 = p1
+
+movi    r2  r0
+rxor    r1
+movi    r3  r0
+rxor    r0
+xor     r10         // r10 = ^(b11:b1)
+
+movi    r4  r0      // r0 = p8
+lsl     r0
+movi    r5  r1
+or      r0          // r0 = p8,p4
+lsl     r0
+movi    r6  r1
+or      r0          // r0 = p8,p4,p2
+lsl     r0
+movi    r7  r1
+or      r0          // r0 = p8,p4,p2,p1
+rxor    r0 
+movi    r10 r1
+xor     r8          // r8 = p0
+
+movi    r2  r0
+lsr     r0
+lsr     r0
+lsr     r0
+lsr     r0
+lsl     r1         // r1 = 0 0 0 b8 b7 b6 b5 0
+movi    r3  r0
+lsl     r0
+lsl     r0
+lsl     r0
+lsl     r0
+lsl     r0
+or      r0
+movi    r4  r1
+or      r11         // r11 = b11,b10,b9,b8,b7,b6,b5,p8
+
+set     14
+movi    r2  r1
+and     r0
+movi    r5  r1
+or      r0
+lsl     r12          // r12 = X X X b4 b3 b2 p4 0
+set     1
+movi    r2  r1
+and     r0
+movi    r12 r1
+or      r1          // r1 = X X X b4 b3 b2 p4 b1
+movi    r1  r0
+lsl     r0
+movi    r6  r1
+or      r0          // r0 = X X b4 b3 b2 p4 b1 p2
+lsl     r0
+movi    r7  r1
+or      r0          // r0 = X b4 b3 b2 p4 b1 p2 p1
+lsl     r0
+movi    r8  r1
+or      r12         // r12 = b4 b3 b2 p4 b1 p2 p1 p0
+
+set     30
+movi    r15 r1
+add     r0
+swr     r12
+inc     r0
+swr     r11
+
+inc     r15
+inc     r15
+inc     r14
+inc     r14
+set     30
+movi    r15 r1
+bneq
+
+halt                // done
+
+
+
+
+
+
+
+
+

@@ -147,7 +147,7 @@ module top_level(
 
 	assign MemWriteValue = Rd;
 
-	dat_mem DM(
+	dat_mem dm1(
 		.Addr     (ReadA        ),
 		.WriteEn  (MemWrite     ),
 		.DataIn   (MemWriteValue),
