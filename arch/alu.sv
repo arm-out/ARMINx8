@@ -23,8 +23,8 @@ op_code op;
 			OR: Out = InA | InB;
 			NOT: Out = ~InA;
 			RXOR: Out = ^InA;
-			LSL: Out = InA << 1;
-			LSR: Out = InA >> 1;
+			LSL: Out = InA << InB;
+			LSR: Out = InA >> InB;
 			INC: Out = InA + 1;
 		endcase
 	end

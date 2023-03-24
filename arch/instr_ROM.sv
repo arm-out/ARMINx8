@@ -9,7 +9,7 @@ module instr_ROM #(parameter D=12)(
 	logic[8:0] core[2**D];
 
 	initial	begin					// load the program
-		$readmemb("../bin/a.txt",core);
+		$readmemb("../bin/test2-clean.txt",core);
 	end						    
 
 	always_comb  InstOut = core[PrgCtr];

@@ -8,7 +8,7 @@ module top_level(
 	parameter P = 12;            // program counter width
 	parameter D = 8;             	// data memory address width
 
-	logic ZeroQ, ParityQ, TapSel, Imm, Move, Eq;
+	logic Imm, Move, Eq, Gt, Lt;
 
 	wire[P-1:0] PrgCtr, 			// program counter
 				PCTarg;
@@ -19,7 +19,7 @@ module top_level(
     wire [ 7:0] RegWriteValue, 		// data in to reg file
                 MemWriteValue, 		// data in to data_memory
                 MemReadValue;  		// data out from data_memory
-    wire [ 5:0] TargSel;			// BLUT target select
+    wire [ 3:0] TargSel;			// BLUT target select
     wire        MemWrite,	   		// data_memory write enable
                 RegWrite,	   		// reg_file write enable
 				MemRead,	   		// data_memory read enable
@@ -50,17 +50,6 @@ module top_level(
 
 	logic[15:0] CycleCt; 			// cycle counter
 
-	always @(posedge Clk) begin
-		if (Reset) begin
-			ZeroQ <= 0;
-			ParityQ <= 0;
-		end
-		else begin
-			ZeroQ <= Zero;
-			ParityQ <= Parity;
-		end
-	end
-
 	// Instruction Fetch Stage
 	
 	PC PC1 (
@@ -87,6 +76,8 @@ module top_level(
 	Control Ctrl (
 		.Instruction (Instruction),
 		.Eq (Eq),
+		.Gt (Gt),
+		.Lt (Lt),
 		.BranchEn	 (BranchEn   ),
 		.MemRead     (MemRead    ),
 		.MemWrite 	 (MemWrite   ),
@@ -112,6 +103,8 @@ module top_level(
 		.Waddr        (RegSel          ),
 		.MoveFrom	 (MoveFrom        ),
 		.Eq (Eq),
+		.Gt (Gt),
+		.Lt (Lt),
 		.DataOutA     (ReadA           ),
 		.DataOutB     (ReadB           ),
 		.DataOutC	  (Rd              ),

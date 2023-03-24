@@ -11,6 +11,8 @@ module reg_file #(parameter pw=4)(
 	input[pw-1:0] 	  Waddr,		  // write address pointer
 					  MoveFrom,
 	output logic      Eq,
+					  Gt,
+					  Lt,
 	output logic[7:0] DataOutA, // read data
 					  DataOutB,
 					  DataOutC,
@@ -74,7 +76,11 @@ module reg_file #(parameter pw=4)(
 			end
 		end
 
-	always_comb Eq = (Registers[0] == Registers[1]);
+	always_comb begin
+		Eq = (Registers[0] == Registers[1]);
+		Gt = (Registers[0] > Registers[1]);
+		Lt = (Registers[0] < Registers[1]);
+	end
 
 endmodule
 /*

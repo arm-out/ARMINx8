@@ -1,7 +1,9 @@
 // control decoder
 module Control (
 	input [8:0]  Instruction,
-	input		 Eq,    // subset of machine code (any width you need)
+	input		 Eq,
+				 Gt,
+				 Lt,
 	output logic BranchEn,
 		 		 MemRead,
 				 MemWrite,
@@ -12,7 +14,7 @@ module Control (
 	output logic [3:0] RegSel,
 					   Move,
 					   MoveFrom,
-	output logic [5:0] TargSel
+	output logic [3:0] TargSel
 	);
 
 	always_comb begin
@@ -57,7 +59,22 @@ module Control (
 						MoveFrom = Instruction[5];
 					end
 			'b110:  begin						// Branch
-						if (!Eq) begin
+						if (!Eq && Instruction[5:4] == 'b00) begin
+							BranchEn = 'b1;
+							RegWrite = 'b0;
+							TargSel = Instruction[5:0];
+						end
+						else if (Eq && Instruction[5:4] == 'b01) begin
+							BranchEn = 'b1;
+							RegWrite = 'b0;
+							TargSel = Instruction[5:0];
+						end
+						else if (Gt && Instruction[5:4] == 'b10) begin
+							BranchEn = 'b1;
+							RegWrite = 'b0;
+							TargSel = Instruction[5:0];
+						end
+						else if (Lt && Instruction[5:4] == 'b11) begin
 							BranchEn = 'b1;
 							RegWrite = 'b0;
 							TargSel = Instruction[5:0];
