@@ -100,7 +100,8 @@ for line in asm_file:
     else:
         bin.append(compile(tokens, idx))
 
-bin_file = open('./bin/a.txt', 'w')
+bin_name = './bin/' + sys.argv[1].split('\\')[-1].split('.')[0] + '.txt'
+bin_file = open(bin_name, 'w')
 
 for i in range(len(bin)):
     if (i != len(bin) - 1):
