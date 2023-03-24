@@ -1,11 +1,4 @@
-C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module PC_LUT
-
-Top level modules:
-	PC_LUT
-
-} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv
+C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module PC
 
@@ -46,6 +39,13 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 
 Top level modules:
 	Control
+
+} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module quicktest_tb
+
+Top level modules:
+	quicktest_tb
 
 } {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021

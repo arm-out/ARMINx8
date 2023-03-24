@@ -6,7 +6,7 @@ import json
 asm_file = open(sys.argv[1], 'r')
 
 branch_lookup = {}
-branch_idx = 1
+branch_idx = 0
 
 if (os.path.isfile('./branch_lookup.txt')):
     with open("./branch_lookup.txt", "r") as fp:
@@ -23,6 +23,9 @@ if (len(keys_list) > 0):
 # immediate to binary
 def decimalToBinary(n):
     return format(n, '06b')
+
+def targetToBinary(n):
+    return format(n, '04b')
 
 def removeComments(tokens):
     if '//' in tokens:
@@ -73,41 +76,55 @@ def compile(tokens, line):
         case _:
             raise Exception("Invalid Instruction on line " + str(line))
 
+def handleBranch(tokens, target):
+    match tokens[0]:
+        case 'bneq':
+            return '11000' + targetToBinary(target)
+        case 'beq':
+            return '11001' + targetToBinary(target)
+        case 'bgt':
+            return '11010' + targetToBinary(target)
+        case 'blt':
+            return '11011' + targetToBinary(target)
 
+code = []
 bin = []
-pc = -1
-idx = 0
-branch_target = -1
+branch_targets = {}
+inst = ['add', 'sub', 'and', 'xor', 'or', 'not', 'rxor', 'lsl', 'lsr', 'inc', 'lwr', 'swr', 'set', 'movi', 'movo', 'bneq', 'beq', 'bgt', 'blt', 'halt']
+b_inst = ['bneq', 'beq', 'bgt', 'blt']
 
+# clean assembly
 for line in asm_file:
-    idx += 1
     tokens = line.split()
     tokens = removeComments(tokens)
     if len(tokens) == 0:
         continue
+    code.append(tokens)
     
-    if (tokens[0] == 'LOOP_BEGIN'):
-        branch_target = pc + 1
-        continue
-    
-    pc += 1
-    if (tokens[0] == 'bneq' and branch_target != -1):
-        branch_lookup[branch_idx] = branch_target
-        bin.append('110' + decimalToBinary(branch_idx))
+# sweep branch targests
+for i, tokens in enumerate(code):
+    if (tokens[0] not in inst):
+        branch_targets[tokens[0]] = (i, branch_idx)
+        branch_lookup[branch_idx] = i
         branch_idx += 1
-        branch_target = -1
-        continue
+        code.pop(i)
+
+for i, line in enumerate(code):
+    if (line[0] in b_inst):
+        bin.append(handleBranch(line, branch_targets[line[1]][1]))
     else:
-        bin.append(compile(tokens, idx))
+        bin.append(compile(line, i))
 
 bin_name = './bin/' + sys.argv[1].split('\\')[-1].split('.')[0] + '.txt'
 bin_file = open(bin_name, 'w')
 
-for i in range(len(bin)):
+print('Writing to ' + bin_name + '...')
+
+for i, line in enumerate(bin):
     if (i != len(bin) - 1):
-        bin_file.write(bin[i] + '\n')
+        bin_file.write(line + '\n')
     else:
-        bin_file.write(bin[i])
+        bin_file.write(line)
 
 # write branch lookup to file
 with open("./branch_lookup.txt", "w") as fp:
