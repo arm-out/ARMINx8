@@ -7,6 +7,11 @@ module PC_LUT #(parameter D=12)(
 		Target = 'b0;
 		case(Addr)
 			'b0000: Target = 2;
+			'b0001: Target = 159;
+			'b0010: Target = 177;
+			'b0011: Target = 181;
+			'b0100: Target = 185;
+			'b0101: Target = 191;
   		endcase
 	end
 endmodule

@@ -32,7 +32,7 @@ bit  [15:0] score2, case2;
 
 // your device goes here
 // explicitly list ports if your names differ from test bench's
-top_level DUT(.clk, .start, .done);	 // replace "top_level" with the name of your top level module
+top_level DUT(.Clk (clk), .Reset(req), .Done(done));	 // replace "top_level" with the name of your top level module
 
 initial begin
 // generate parity from random 11-bit messages 

@@ -59,6 +59,7 @@ module Control (
 						MoveFrom = Instruction[5];
 					end
 			'b110:  begin						// Branch
+						RegWrite = 'b0;
 						if (!Eq && Instruction[5:4] == 'b00) begin
 							BranchEn = 'b1;
 							RegWrite = 'b0;
