@@ -40,41 +40,44 @@ def convertReg(reg):
         raise Exception("Invalid Register")
     
 def compile(tokens, line):
-    match tokens[0]:
-        case 'add':
-            return '00000' + convertReg(tokens[1])
-        case 'sub':
-            return '00001' + convertReg(tokens[1])
-        case 'and':
-            return '00010' + convertReg(tokens[1])
-        case 'xor':
-            return '00011' + convertReg(tokens[1])
-        case 'or':
-            return '00100' + convertReg(tokens[1])
-        case 'not':
-            return '00101' + convertReg(tokens[1])
-        case 'rxor':
-            return '00110' + convertReg(tokens[1])
-        case 'lsl':
-            return '00111' + convertReg(tokens[1])
-        case 'lsr':
-            return '01000' + convertReg(tokens[1])
-        case 'inc':
-            return '01001' + convertReg(tokens[1])
-        case 'lwr':
-            return '01010' + convertReg(tokens[1])
-        case 'swr':
-            return '01011' + convertReg(tokens[1])
-        case 'set':
-            return '011' + decimalToBinary(int(tokens[1]))
-        case 'movi':
-            return '100' + convertReg(tokens[1]) + convertReg(tokens[2])[-1] + '0'
-        case 'movo':
-            return '101' + convertReg(tokens[1])[-1] + '0' + convertReg(tokens[2])
-        case 'halt':
-            return '111111111'
-        case _:
-            raise Exception("Invalid Instruction on line " + str(line))
+    try:
+        match tokens[0]:
+            case 'add':
+                return '00000' + convertReg(tokens[1])
+            case 'sub':
+                return '00001' + convertReg(tokens[1])
+            case 'and':
+                return '00010' + convertReg(tokens[1])
+            case 'xor':
+                return '00011' + convertReg(tokens[1])
+            case 'or':
+                return '00100' + convertReg(tokens[1])
+            case 'not':
+                return '00101' + convertReg(tokens[1])
+            case 'rxor':
+                return '00110' + convertReg(tokens[1])
+            case 'lsl':
+                return '00111' + convertReg(tokens[1])
+            case 'lsr':
+                return '01000' + convertReg(tokens[1])
+            case 'inc':
+                return '01001' + convertReg(tokens[1])
+            case 'lwr':
+                return '01010' + convertReg(tokens[1])
+            case 'swr':
+                return '01011' + convertReg(tokens[1])
+            case 'set':
+                return '011' + decimalToBinary(int(tokens[1]))
+            case 'movi':
+                return '100' + convertReg(tokens[1]) + convertReg(tokens[2])[-1] + '0'
+            case 'movo':
+                return '101' + convertReg(tokens[1])[-1] + '0' + convertReg(tokens[2])
+            case 'halt':
+                return '111111111'
+            case _:
+                raise Exception("Invalid Instruction on line " + str(line))
+    except Exception as e:
+        raise Exception("Compile Error on line " + str(line))
 
 def handleBranch(tokens, target):
     match tokens[0]:
@@ -104,13 +107,19 @@ for line in asm_file:
 # sweep branch targests
 for i, tokens in enumerate(code):
     if (tokens[0] not in inst):
-        branch_targets[tokens[0]] = (i, branch_idx)
-        branch_lookup[branch_idx] = i
-        branch_idx += 1
+        if (i in branch_lookup.values()):
+            print('Found duplicate branch target: ' + tokens[0])
+            index = [j for j in branch_lookup if branch_lookup[j]== i]
+            branch_targets[tokens[0]] = (i, index[0])
+        else:
+            print('NEW branch target: ' + tokens[0])
+            branch_targets[tokens[0]] = (i, branch_idx)
+            branch_lookup[branch_idx] = i
+            branch_idx += 1
         code.pop(i)
 
 for i, line in enumerate(code):
-    if (line[0] in b_inst):
+    if (line[0] in b_inst):  
         bin.append(handleBranch(line, branch_targets[line[1]][1]))
     else:
         bin.append(compile(line, i))
@@ -126,6 +135,10 @@ for i, line in enumerate(bin):
     else:
         bin_file.write(line)
 
+
+
 # write branch lookup to file
 with open("./branch_lookup.txt", "w") as fp:
     json.dump(branch_lookup, fp)
+
+print (branch_targets)
