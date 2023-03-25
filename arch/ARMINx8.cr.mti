@@ -1,16 +1,16 @@
-C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module PC
-
-Top level modules:
-	PC
-
-} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv
+C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling module dat_mem
 
 Top level modules:
 	dat_mem
+
+} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module PC
+
+Top level modules:
+	PC
 
 } {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
@@ -19,12 +19,12 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	--none--
 
-} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv
+} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module instr_ROM
+-- Compiling module Control
 
 Top level modules:
-	instr_ROM
+	Control
 
 } {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/reg_file.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/reg_file.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
@@ -33,19 +33,19 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	reg_file
 
-} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv
+} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module Control
+-- Compiling module instr_ROM
 
 Top level modules:
-	Control
+	instr_ROM
 
-} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
+} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module quicktest_tb
+-- Compiling module prog1_tb
 
 Top level modules:
-	quicktest_tb
+	prog1_tb
 
 } {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv {1 {vlog -work build -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
@@ -63,11 +63,11 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	alu
 
-} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv
+} {} {}} C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
 Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module prog1_tb
+-- Compiling module quicktest_tb
 
 Top level modules:
-	prog1_tb
+	quicktest_tb
 
 } {} {}}

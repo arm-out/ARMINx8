@@ -6,10 +6,7 @@ module PC_LUT #(parameter D=12)(
 	always_comb begin
 		Target = 'b0;
 		case(Addr)
-			'b0000: Target = 13;
-			'b0001: Target = 25;
-			'b0010: Target = 37;
-			'b0011: Target = 49;
+			'b0000: Target = 2;
   		endcase
 	end
 endmodule

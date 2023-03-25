@@ -11,6 +11,14 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -20,31 +28,31 @@ R0
 cModel Technology
 Z1 dC:/intelFPGA_lite/21.1
 T_opt
-!s110 1679691004
-VSWW5m018NB7mF``_QDb2O3
+!s110 1679691795
+V:A0??7R2OT];M`_6[C`<=2
 04 12 4 work quicktest_tb fast 0
-=2-a8a159446218-641e0cfb-3d1-2fb4
+=3-a8a159446218-641e1013-228-2fb4
 Z2 !s124 OEM10U9 
 Z3 o-quiet -auto_acc_if_foreign -work work +acc
 Z4 tCvgOpt 0
 n@_opt
 Z5 OL;O;2021.2;73
+R1
 T_opt1
-!s110 1679618415
-VaAVdI8dO0ClW[llmiQz2F2
+!s110 1679709847
+V_0[]9OI:z7BEg@cdnGVSn0
 Z6 04 8 4 work prog1_tb fast 0
-=3-a8a159446218-641cf16f-1a1-228c
+=1-a8a159446218-641e5697-153-8f8
 R2
-o-quiet -auto_acc_if_foreign -work build +acc
+R3
 R4
 n@_opt1
 R5
-R1
 T_opt2
-!s110 1679621425
-VF@VkQV@@JoSl8`BggzLY12
+!s110 1679698694
+VE6R8NYXnhg@CN=<k;W_bH2
 R6
-=1-a8a159446218-641cfd31-1a9-31d0
+=1-a8a159446218-641e2b06-6c-cec
 R2
 R3
 R4
@@ -55,7 +63,7 @@ valu
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 Z8 DXx4 work 11 Definitions 0 22 `67]=C6nej7IcKg7@TQ9Q2
 DXx4 work 11 alu_sv_unit 0 22 6aU0J4G@>XCYGT[Za??i?2
-Z9 !s110 1679690998
+Z9 !s110 1679709838
 Z10 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -65,14 +73,14 @@ Ij;On^iIW6W=[[U0ZDaKSc1
 !s105 alu_sv_unit
 S1
 Z11 dC:/Users/armin/OneDrive/Documents/ARMINx8/arch
-Z12 w1679680612
+Z12 w1679693379
 Z13 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv
 Z14 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv
-!i122 140
+!i122 228
 L0 5 34
 Z15 OL;L;2021.2;73
 31
-Z16 !s108 1679690998.000000
+Z16 !s108 1679709838.000000
 Z17 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv|
 Z18 !s90 -reportprogress|300|-work|build|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv|
 !i113 0
@@ -94,7 +102,7 @@ R11
 R12
 R13
 R14
-!i122 140
+!i122 228
 L0 3 0
 R15
 31
@@ -106,23 +114,23 @@ R19
 R4
 vControl
 R7
-R9
+Z20 !s110 1679709837
 !i10b 1
 !s100 KAd^2Sf5keX8K9jjYc4eI3
 I:?23zRKJ<S?i6O3g0<CXP0
 S1
 R11
-w1679686687
+w1679697431
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv
-!i122 133
+!i122 221
 L0 2 88
 R10
 R15
 r1
 !s85 0
 31
-R16
+Z21 !s108 1679709837.000000
 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv|
 !s90 -reportprogress|300|-work|build|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv|
 !i113 0
@@ -131,7 +139,7 @@ R4
 n@control
 vdat_mem
 R7
-R9
+R20
 !i10b 1
 !s100 8IcJi7hM7k=EkVPQEkmKQ0
 I`C0nn0HbmcNQAF3OJWj]^1
@@ -140,14 +148,14 @@ R11
 w1679513289
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv
-!i122 134
+!i122 222
 L0 2 20
 R10
 R15
 r1
 !s85 0
 31
-R16
+R21
 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv|
 !s90 -reportprogress|300|-work|build|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv|
 !i113 0
@@ -155,7 +163,7 @@ R19
 R4
 XDefinitions
 R7
-R9
+R20
 !i10b 1
 !s100 zbi::kRl;IRXJJd7Dl[h[3
 I`67]=C6nej7IcKg7@TQ9Q2
@@ -164,14 +172,14 @@ R11
 w1679513005
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv
-!i122 135
+!i122 223
 L0 1 0
 V`67]=C6nej7IcKg7@TQ9Q2
 R15
 r1
 !s85 0
 31
-R16
+R21
 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv|
 !s90 -reportprogress|300|-work|build|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv|
 !i113 0
@@ -182,14 +190,14 @@ vinstr_ROM
 R7
 R9
 !i10b 1
-!s100 EEgbo;eY69N`ebYf9A<<R2
-IOSJe<BQI;]T;b77@44BgZ2
+!s100 _g1cH6`C2[?Vc9E>0=n^_1
+IXj`GMW[Kd<8T3KPS4^lh;3
 S1
 R11
-w1679690589
+w1679698509
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv
-!i122 136
+!i122 224
 L0 4 13
 R10
 R15
@@ -212,20 +220,20 @@ Ici:W;jXI:@i:E1ILDHgW60
 S1
 R11
 w1679687051
-Z20 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
-Z21 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
+Z22 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
+Z23 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv
 !i122 99
-Z22 L0 1 47
+Z24 L0 1 47
 R10
 R15
 r1
 !s85 0
 31
 !s108 1679687069.000000
-Z23 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv|
-Z24 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv|
+Z25 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv|
+Z26 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/quicktest_tb.sv|
 !i113 0
-Z25 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z27 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R4
 vPC
 R7
@@ -238,7 +246,7 @@ R11
 w1679513336
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv
-!i122 137
+!i122 225
 L0 4 17
 R10
 R15
@@ -256,14 +264,14 @@ vPC_LUT
 R7
 R9
 !i10b 1
-!s100 OH9YJTd_RmknHZ>XaVe2G1
-I^<^Do0cG[Vo9m^C3]zG_J3
+!s100 m1Gm:cCaS1n7j`bmkP:^;1
+I^ML@IC0dg8Ib<Dg:D6PH?0
 S1
 R11
-w1679690992
+w1679698314
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv
-!i122 138
+!i122 226
 L0 1 15
 R10
 R15
@@ -279,16 +287,16 @@ R4
 n@p@c_@l@u@t
 vprog1_tb
 R7
-Z26 !s110 1679690999
+R9
 !i10b 1
 !s100 O]G34ni7h`o>n:cm2nN^R3
 IdlYUc4k66IoGBS@5f@FZP3
 S1
 R11
-w1679621308
+w1679709823
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv
-!i122 141
+!i122 229
 L0 10 62
 R10
 R15
@@ -299,31 +307,31 @@ R16
 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/prog1_tb.sv|
 !i113 0
-R25
+R27
 R4
 vquicktest_tb
 R7
-R26
+R9
 !i10b 1
 !s100 HoUTM[UnVNbOdKb]<3e1Z3
 Id^CYaG`PYlVEWDcjG9a5`1
 S1
 R11
 w1679687177
-R20
-R21
-!i122 143
 R22
+R23
+!i122 231
+R24
 R10
 R15
 r1
 !s85 0
 31
-Z27 !s108 1679690999.000000
-R23
-R24
-!i113 0
+R16
 R25
+R26
+!i113 0
+R27
 R4
 vreg_file
 R7
@@ -336,7 +344,7 @@ R11
 w1679680877
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/reg_file.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/reg_file.sv
-!i122 139
+!i122 227
 L0 3 83
 R10
 R15
@@ -351,23 +359,23 @@ R19
 R4
 vtop_level
 R7
-R26
+R9
 !i10b 1
 !s100 RRD1GE4a13Z48LmNBR[JG1
 IVjd37Zf^0Ieza2L8`2GF_2
 S1
 R11
-w1679686858
+w1679697413
 8C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv
 FC:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv
-!i122 142
+!i122 230
 L0 2 152
 R10
 R15
 r1
 !s85 0
 31
-R27
+R16
 !s107 C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv|
 !s90 -reportprogress|300|-work|build|-vopt|-sv|-stats=none|C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv|
 !i113 0
