@@ -1,18 +1,38 @@
-module PC_LUT #(parameter D=12)(
+module PC_LUT #(parameter prog=3)(
 	input        [  3:0] Addr,
-	output logic [D-1:0] Target
+	output logic [11:0] Target
 	);
 
 	always_comb begin
 		Target = 'b0;
-		case(Addr)
-			'b0000: Target = 2;
-			'b0001: Target = 159;
-			'b0010: Target = 177;
-			'b0011: Target = 181;
-			'b0100: Target = 185;
-			'b0101: Target = 191;
-  		endcase
+		if (prog == 3)	begin
+			case(Addr)
+				'b0000: Target = 7;
+				'b0001: Target = 17;
+				'b0010: Target = 31;
+				'b0011: Target = 45;
+				'b0100: Target = 59;
+				'b0101: Target = 68;
+				'b0110: Target = 116;
+				'b0111: Target = 117;
+				'b1000: Target = 127;
+				'b1001: Target = 147;
+				'b1010: Target = 166;
+				'b1011: Target = 178;
+				'b1100: Target = 190;
+				'b1101: Target = 202;
+			endcase
+		end
+		else begin
+			case(Addr)
+				'b0000: Target = 2;
+				'b0001: Target = 159;
+				'b0010: Target = 177;
+				'b0011: Target = 181;
+				'b0100: Target = 185;
+				'b0101: Target = 191;
+			endcase
+		end
 	end
 endmodule
 

@@ -75,9 +75,9 @@ def compile(tokens, line):
             case 'halt':
                 return '111111111'
             case _:
-                raise Exception("Invalid Instruction on line " + str(line))
+                raise Exception("Invalid Instruction on line " + str(line) + ": " + str(tokens))
     except Exception as e:
-        raise Exception("Compile Error on line " + str(line))
+        raise Exception("Compile Error on line " + str(line) + ": " + str(tokens))
 
 def handleBranch(tokens, target):
     match tokens[0]:
