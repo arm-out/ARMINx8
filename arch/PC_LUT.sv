@@ -23,7 +23,7 @@ module PC_LUT #(parameter prog=3)(
 				'b1101: Target = 202;
 			endcase
 		end
-		else begin
+		else if (prog == 2 | prog == 1) begin
 			case(Addr)
 				'b0000: Target = 2;
 				'b0001: Target = 159;

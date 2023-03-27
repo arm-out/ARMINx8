@@ -1,0 +1,513 @@
+Analysis & Synthesis report for top_level
+Sun Mar 26 16:51:38 2023
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |top_level
+ 11. Parameter Settings for User Entity Instance: PC:PC1
+ 12. Parameter Settings for User Entity Instance: PC_LUT:BLUT
+ 13. Parameter Settings for User Entity Instance: instr_ROM:IF
+ 14. Parameter Settings for User Entity Instance: reg_file:RF
+ 15. Port Connectivity Checks: "reg_file:RF"
+ 16. Port Connectivity Checks: "Control:Ctrl"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++-----------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status       ; Successful - Sun Mar 26 16:51:38 2023       ;
+; Quartus Prime Version             ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                     ; top_level                                   ;
+; Top-level Entity Name             ; top_level                                   ;
+; Family                            ; Arria II GX                                 ;
+; Logic utilization                 ; N/A                                         ;
+;     Combinational ALUTs           ; 1,336                                       ;
+;     Memory ALUTs                  ; 0                                           ;
+;     Dedicated logic registers     ; 2,188                                       ;
+; Total registers                   ; 2188                                        ;
+; Total pins                        ; 3                                           ;
+; Total virtual pins                ; 0                                           ;
+; Total block memory bits           ; 0                                           ;
+; DSP block 18-bit elements         ; 0                                           ;
+; Total GXB Receiver Channel PCS    ; 0                                           ;
+; Total GXB Receiver Channel PMA    ; 0                                           ;
+; Total GXB Transmitter Channel PCS ; 0                                           ;
+; Total GXB Transmitter Channel PMA ; 0                                           ;
+; Total PLLs                        ; 0                                           ;
+; Total DLLs                        ; 0                                           ;
++-----------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                           ; top_level          ; top_level          ;
+; Family name                                                                     ; Arria II GX        ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                        ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                               ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++-------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path                      ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                  ; Library ;
++-------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+; top_level.sv                                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv   ;         ;
+; reg_file.sv                                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/reg_file.sv    ;         ;
+; PC_LUT.sv                                             ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv      ;         ;
+; PC.sv                                                 ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv          ;         ;
+; instr_ROM.sv                                          ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv   ;         ;
+; Definitions.sv                                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv ;         ;
+; dat_mem.sv                                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv     ;         ;
+; Control.sv                                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv     ;         ;
+; alu.sv                                                ; yes             ; User SystemVerilog HDL File  ; C:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv         ;         ;
+; /users/armin/onedrive/documents/arminx8/bin/prog3.txt ; yes             ; Auto-Found File              ; /users/armin/onedrive/documents/arminx8/bin/prog3.txt         ;         ;
++-------------------------------------------------------+-----------------+------------------------------+---------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++-----------------------------------------------+-----------+
+; Resource                                      ; Usage     ;
++-----------------------------------------------+-----------+
+; Estimated ALUTs Used                          ; 1336      ;
+;     -- Combinational ALUTs                    ; 1336      ;
+;     -- Memory ALUTs                           ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+; Dedicated logic registers                     ; 2188      ;
+;                                               ;           ;
+; Estimated ALUTs Unavailable                   ; 3         ;
+;     -- Due to unpartnered combinational logic ; 3         ;
+;     -- Due to Memory ALUTs                    ; 0         ;
+;                                               ;           ;
+; Total combinational functions                 ; 1336      ;
+; Combinational ALUT usage by number of inputs  ;           ;
+;     -- 7 input functions                      ; 3         ;
+;     -- 6 input functions                      ; 1222      ;
+;     -- 5 input functions                      ; 44        ;
+;     -- 4 input functions                      ; 25        ;
+;     -- <=3 input functions                    ; 42        ;
+;                                               ;           ;
+; Combinational ALUTs by mode                   ;           ;
+;     -- normal mode                            ; 1312      ;
+;     -- extended LUT mode                      ; 3         ;
+;     -- arithmetic mode                        ; 21        ;
+;     -- shared arithmetic mode                 ; 0         ;
+;                                               ;           ;
+; Estimated ALUT/register pairs used            ; 3455      ;
+;                                               ;           ;
+; Total registers                               ; 2188      ;
+;     -- Dedicated logic registers              ; 2188      ;
+;     -- I/O registers                          ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+;                                               ;           ;
+;                                               ;           ;
+; I/O pins                                      ; 3         ;
+;                                               ;           ;
+; DSP block 18-bit elements                     ; 0         ;
+;                                               ;           ;
+; Maximum fan-out node                          ; Clk~input ;
+; Maximum fan-out                               ; 2188      ;
+; Total fan-out                                 ; 14474     ;
+; Average fan-out                               ; 4.10      ;
++-----------------------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-------------------------+-------------+--------------+
+; |top_level                 ; 1336 (8)            ; 2188 (0)                  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 3    ; 0            ; |top_level              ; top_level   ; work         ;
+;    |Control:Ctrl|          ; 26 (26)             ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |top_level|Control:Ctrl ; Control     ; work         ;
+;    |PC:PC1|                ; 24 (24)             ; 12 (12)                   ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |top_level|PC:PC1       ; PC          ; work         ;
+;    |alu:ALU|               ; 30 (30)             ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |top_level|alu:ALU      ; alu         ; work         ;
+;    |dat_mem:dm1|           ; 1000 (1000)         ; 2048 (2048)               ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |top_level|dat_mem:dm1  ; dat_mem     ; work         ;
+;    |instr_ROM:IF|          ; 55 (55)             ; 0 (0)                     ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |top_level|instr_ROM:IF ; instr_ROM   ; work         ;
+;    |reg_file:RF|           ; 193 (193)           ; 128 (128)                 ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |top_level|reg_file:RF  ; reg_file    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+-------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2188  ;
+; Number of registers using Synchronous Clear  ; 136   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2176  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; Yes        ; |top_level|PC:PC1|PrgCtr[10]            ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; Yes        ; |top_level|PC:PC1|PrgCtr[7]             ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[0][6]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[1][2]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[2][3]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[3][7]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[4][1]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[5][0]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[6][4]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[7][4]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[8][7]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[9][7]  ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[10][5] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[11][1] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[12][1] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[13][4] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[14][1] ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 0 ALUTs              ; 16 ALUTs               ; Yes        ; |top_level|reg_file:RF|Registers[15][0] ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |top_level|alu:ALU|ShiftLeft0           ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |top_level|alu:ALU|ShiftRight0          ;
+; 4:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |top_level|alu:ALU|ShiftRight0          ;
+; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; No         ; |top_level|Control:Ctrl|TargSel[3]      ;
+; 16:1               ; 8 bits    ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |top_level|reg_file:RF|Mux6             ;
+; 35:1               ; 2 bits    ; 46 ALUTs      ; 44 ALUTs             ; 2 ALUTs                ; No         ; |top_level|reg_file:RF|Registers        ;
+; 35:1               ; 2 bits    ; 46 ALUTs      ; 44 ALUTs             ; 2 ALUTs                ; No         ; |top_level|reg_file:RF|Registers        ;
+; 35:1               ; 3 bits    ; 69 ALUTs      ; 66 ALUTs             ; 3 ALUTs                ; No         ; |top_level|reg_file:RF|Registers        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top_level ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; P              ; 12    ; Signed Integer                                   ;
+; D              ; 8     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:PC1 ;
++----------------+-------+----------------------------+
+; Parameter Name ; Value ; Type                       ;
++----------------+-------+----------------------------+
+; D              ; 12    ; Signed Integer             ;
++----------------+-------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC_LUT:BLUT ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; prog           ; 3     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instr_ROM:IF ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; D              ; 12    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:RF ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; pw             ; 4     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg_file:RF"                                                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Reg0Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg1Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg2Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg3Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg4Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg5Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg6Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg7Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg8Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg9Value  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg10Value ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg11Value ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg12Value ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg13Value ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg14Value ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Reg15Value ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control:Ctrl"                                                                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; Move ; Output ; Warning  ; Output or bidir port (4 bits) is wider than the port expression (1 bits) it drives; bit(s) "Move[3..1]" have no fanouts ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriaii_ff            ; 2188                        ;
+;     ENA               ; 2048                        ;
+;     ENA SCLR          ; 128                         ;
+;     SCLR              ; 8                           ;
+;     plain             ; 4                           ;
+; boundary_port         ; 3                           ;
+; stratixiv_lcell_comb  ; 1336                        ;
+;     arith             ; 21                          ;
+;         1 data inputs ; 13                          ;
+;         5 data inputs ; 8                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 1312                        ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 19                          ;
+;         4 data inputs ; 25                          ;
+;         5 data inputs ; 36                          ;
+;         6 data inputs ; 1222                        ;
+;                       ;                             ;
+; Max LUT depth         ; 9.00                        ;
+; Average LUT depth     ; 6.04                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Sun Mar 26 16:51:28 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level -c top_level
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file top_level.sv
+    Info (12023): Found entity 1: top_level File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file reg_file.sv
+    Info (12023): Found entity 1: reg_file File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/reg_file.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file pc_lut.sv
+    Info (12023): Found entity 1: PC_LUT File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file pc.sv
+    Info (12023): Found entity 1: PC File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file instr_rom.sv
+    Info (12023): Found entity 1: instr_ROM File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file definitions.sv
+    Info (12022): Found design unit 1: Definitions (SystemVerilog) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Definitions.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dat_mem.sv
+    Info (12023): Found entity 1: dat_mem File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file control.sv
+    Info (12023): Found entity 1: Control File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv Line: 5
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Info (12128): Elaborating entity "PC" for hierarchy "PC:PC1" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 61
+Warning (10230): Verilog HDL assignment warning at PC.sv(18): truncated value with size 32 to match size of target (12) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC.sv Line: 18
+Info (12128): Elaborating entity "PC_LUT" for hierarchy "PC_LUT:BLUT" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 66
+Warning (10270): Verilog HDL Case Statement warning at PC_LUT.sv(9): incomplete case statement has no default case item File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/PC_LUT.sv Line: 9
+Info (12128): Elaborating entity "instr_ROM" for hierarchy "instr_ROM:IF" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 71
+Warning (10850): Verilog HDL warning at instr_ROM.sv(12): number of words (205) in memory file does not match the number of elements in the address range [0:4095] File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv Line: 12
+Warning (10030): Net "core.data_a" at instr_ROM.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv Line: 9
+Warning (10030): Net "core.waddr_a" at instr_ROM.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv Line: 9
+Warning (10030): Net "core.we_a" at instr_ROM.sv(9) has no driver or initial value, using a default initial value '0' File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/instr_ROM.sv Line: 9
+Info (12128): Elaborating entity "Control" for hierarchy "Control:Ctrl" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 92
+Warning (10230): Verilog HDL assignment warning at Control.sv(66): truncated value with size 6 to match size of target (4) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv Line: 66
+Warning (10230): Verilog HDL assignment warning at Control.sv(71): truncated value with size 6 to match size of target (4) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at Control.sv(76): truncated value with size 6 to match size of target (4) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv Line: 76
+Warning (10230): Verilog HDL assignment warning at Control.sv(81): truncated value with size 6 to match size of target (4) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv Line: 81
+Warning (10270): Verilog HDL Case Statement warning at Control.sv(33): incomplete case statement has no default case item File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/Control.sv Line: 33
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:RF" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 127
+Info (12128): Elaborating entity "alu" for hierarchy "alu:ALU" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 139
+Warning (10230): Verilog HDL assignment warning at alu.sv(28): truncated value with size 32 to match size of target (8) File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/alu.sv Line: 28
+Info (12128): Elaborating entity "dat_mem" for hierarchy "dat_mem:dm1" File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/top_level.sv Line: 150
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "dat_mem:dm1|core" is uninferred due to asynchronous read logic File: C:/Users/armin/OneDrive/Documents/ARMINx8/arch/dat_mem.sv Line: 11
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/armin/OneDrive/Documents/ARMINx8/arch/db/top_level.ram0_instr_ROM_8ff220a8.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/armin/OneDrive/Documents/ARMINx8/arch/output_files/top_level.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3515 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 3512 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
+    Info: Peak virtual memory: 4909 megabytes
+    Info: Processing ended: Sun Mar 26 16:51:38 2023
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:09
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/armin/OneDrive/Documents/ARMINx8/arch/output_files/top_level.map.smsg.
+
+

@@ -1,5 +1,6 @@
 # ARMINx8
- **Another RISC Microprocessor Indeed**
+ **Another RISC Microprocessor Indeed**\
+[Video Explanation](https://youtu.be/0jN2UPsxYUo)
 ARMINx8 is a fully custom 8-bit microprocessor with a custom architecture.
 While the architectural design intends on being a general purpose instruction set, this processor is programmed (through lookup tables) to specifically run three programs in `/asm`: `prog1.armin`, `prog2.armin` and `prog3.armin`
 
@@ -34,7 +35,7 @@ The immediates are unsigned with their largest possible value being $2^6-1 = 31$
 | inc      | R    | R[rd] = R[rd] + 1                 | 2/1                |
 | lwr      | R    | R[rd] = Mem[r0]                   | 2/2                |
 | swr      | R    | Mem[r0] = R[rd]                   | 2/3                |
-| set      | R    | R[rd] = imm                       | 3                  |
+| set      | I    | R[rd] = imm                       | 3                  |
 | movi     | M1   | R[sel] = R[s]                     | 4                  |
 | movo     | M2   | R[d] = R[sel]                     | 5                  |
 | bneq     | B    | if (R[0] != R[1]) PC = b_LUT[imm] | 6/0                |
@@ -46,4 +47,5 @@ The immediates are unsigned with their largest possible value being $2^6-1 = 31$
 ### Registers
 This ISA supports 16 general purpose registers, of which `$r0` and `$r1$` are implicitly used as the `rs` and `rt` registers where applicable. To facilitate this we use the `movo` and `movi` instructions to move data in and out of the source registers.
 
-## Assembler
+## RTL Diagram
+![](img/RTL.png)

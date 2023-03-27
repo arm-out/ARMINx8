@@ -16,7 +16,7 @@ lwr	 010  10   rd	    R
 swr	 010  11   rd	    R
 
 set	 011  XX   XXXX	    I
-movi     100  rs   0X	    R 
+movi     100  rs   0X	    R R
 movo     101  0X   rd	    R
 bneq	 110  00   XXXX	    B
 beq      110  01   XXXX	    B
